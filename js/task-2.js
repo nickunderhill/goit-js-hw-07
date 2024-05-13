@@ -1,9 +1,24 @@
-function getShippingMessage(country, price, deliveryFee) {
-    const totalPrice = price + deliveryFee;
-    return `Shipping to ${country} will cost ${totalPrice} credits`;
-}
-
-console.log("Task 2:");
-console.log(getShippingMessage("Australia", 120, 50));
-console.log(getShippingMessage("Germany", 80, 20));
-console.log(getShippingMessage("Sweden", 100, 20));
+document.addEventListener('DOMContentLoaded', function() {
+    const images = [
+      {
+        url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
+        alt: "White and Black Long Fur Cat",
+      },
+      {
+        url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+        alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+      },
+      {
+        url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+        alt: "Group of Horses Running",
+      },
+    ];
+  
+    const galleryUl = document.querySelector('.gallery');
+    const galleryHtml = images.map(image => 
+      `<li><img src="${image.url}" alt="${image.alt}" width="300"></li>`
+    ).join('');
+  
+    galleryUl.insertAdjacentHTML('beforeend', galleryHtml);
+  });
+  
